@@ -21,7 +21,7 @@ function findUniqueElements(array) {
         let isUnique = true;
         for (let j = 0; j < uniqueArray.length; j++) {
             if (array[i] === uniqueArray[j]){
-            isUnique - false;
+            isUnique = false;
             break;
             }
         }

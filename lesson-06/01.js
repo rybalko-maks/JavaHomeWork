@@ -18,7 +18,7 @@ const WEB_TECH_IMAGES = [
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/784380b9-6937-42a6-bdfe-869835820234_html-magic-logo.jpg',
 ]
 
-const prev = document.getElementById("Prev-button")
+const prev = document.getElementById("prev-button")
 const next = document.getElementById("next-button")
 
 let currentIndex = 0

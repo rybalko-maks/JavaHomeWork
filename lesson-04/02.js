@@ -17,15 +17,9 @@
 
 function findUniqueElements(array) {
     const uniqueArray = [];
-    for (let i = 0; i < array.length; i++){
-        let isUnique = true;
-        for (let j = 0; j < uniqueArray.length; j++) {
-            if (array[i] === uniqueArray[j]){
-            isUnique = false;
-            break;
-            }
-        }
-        if (isUnique){
+    for (let i = 0; i < array.length; i++) {
+        const isNotUnique = includesElement(uniqueArray, i);
+        if (isNotUnique === false) {
             uniqueArray.push(array[i]);
         }
     }

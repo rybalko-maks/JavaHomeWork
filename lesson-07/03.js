@@ -9,17 +9,13 @@
 * truncate("Короткая строка", 20) // Ожидаемый результат: "Короткая строка"
 */
 
-function truncate(str, maxLength) {// Проверяем, превышает ли длина строки максимальную длину
-  if (str.length > maxLength) {
-    // Обрезаем строку до maxLength и добавляем многоточие
-    return str.slice(0, maxLength - 3) + '...';
-  }
-  // Если длина строки меньше или равна maxLength, возвращаем исходную строку
-  return str;
-}
+function truncate(str, maxLength) {
 
-// Примеры использования
+  if (str.length <= maxLength) {
+    return str;
+  }
+
+  return str.slice(0, maxLength - 3) + '...';
+}
 console.log(truncate("Вот, что мне действительно нравится в этом", 20)); // Ожидаемый результат: "Вот, что мне действи..."
 console.log(truncate("Короткая строка", 20)); // Ожидаемый результат: "Короткая строка"
-  // your code
-

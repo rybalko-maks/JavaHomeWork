@@ -4,10 +4,11 @@
  */
 
 function isNumeric(str) {
-  str = str.trim();
+  if (typeof str !== 'string' || str.trim() === '') {
+      return false;
+  }
 
-  const regex = /^-?\d+(\.\d+)?$/;
-
+  const regex = /^[-+]?\d*\.?\d+(e[-+]?\d+)?$/i;
   return regex.test(str);
 }
 

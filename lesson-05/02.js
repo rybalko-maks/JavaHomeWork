@@ -29,16 +29,27 @@ console.log(gallery)
 }
 */
 
-const gallery = {
-  'Mona Lisa': 'Leonardo da Vinci',
-  'Starry Night': 'Vincent van Gogh',
-  'The Scream': 'Edvard Munch',
-}
+// const gallery = {
+//   'Mona Lisa': 'Leonardo da Vinci',
+//   'Starry Night': 'Vincent van Gogh',
+//   'The Scream': 'Edvard Munch',
+// }
 
-function updateGallery(object, key, value) {
-  object[key] = value;
-}
+// function updateGallery(object, key, value) {
+//   object[key] = value;
+// }
 
-updateGallery(gallery, 'Mona Lisa', 'Leonardo da Vinci, 1503-1506')
-updateGallery(gallery, 'The Persistence of Memory', 'Salvador Dali')
-console.log(gallery)
+// updateGallery(gallery, 'Mona Lisa', 'Leonardo da Vinci, 1503-1506')
+// updateGallery(gallery, 'The Persistence of Memory', 'Salvador Dali')
+// console.log(gallery)
+
+function updateGallery(gallery, artworkName, newValue) {
+  // Проверяем, существует ли уже такое произведение в галерее
+  if (gallery.hasOwnProperty(artworkName)) {
+    // Если существует, обновляем его значение
+    gallery[artworkName] = newValue;
+  } else {
+    // Если не существует, добавляем новое произведение
+    gallery[artworkName] = newValue;
+  }
+}

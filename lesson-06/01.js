@@ -18,19 +18,27 @@ const WEB_TECH_IMAGES = [
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/784380b9-6937-42a6-bdfe-869835820234_html-magic-logo.jpg',
 ]
 
-const prev = document.getElementById("prev-button")
-const next = document.getElementById("next-button")
+const image = document.querySelector('img');
+const prevButton = document.getElementById('prev-button');
+const nextButton = document.getElementById('next-button');
 
-let currentIndex = 0
-function updateImage() {
-  const imageElement = document.getElementById("web-tech-image");
-  imageElement.src = WEB_TECH_IMAGES[currentIndex];
+let currentImageIndex = 0;
+
+function showImage() {
+  image.src = WEB_TECH_IMAGES[currentImageIndex];
 }
-next.addEventListener('click',function(){
-  currentIndex = (currentIndex + 1) % WEB_TECH_IMAGES.length;
-  updateImage();
-});
-prev.addEventListener('click',function(){
-  currentIndex = (currentIndex - 1 + WEB_TECH_IMAGES.length) % WEB_TECH_IMAGES.length;
-  updateImage();
-})
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % WEB_TECH_IMAGES.length;
+  showImage();
+}
+
+function prevImage() {
+  currentImageIndex = (currentImageIndex - 1 + WEB_TECH_IMAGES.length) % WEB_TECH_IMAGES.length;
+  showImage();
+}
+
+nextButton.addEventListener('click', nextImage);
+prevButton.addEventListener('click', prevImage);
+
+showImage()
